@@ -11,6 +11,8 @@ string lootGen();
 // battle
 void initiatebossFight();
 void initiatenormalFight();
+
+//loot
 void chestFunction();
 
 // songs
@@ -113,6 +115,7 @@ int main()
             }
             cout << "You are currently in Room One" << endl;
             initiatenormalFight();
+            chestFunction();
             cout << "Continue? Y/N" << endl;
             cin >> finalQuestion;
             if (finalQuestion == 'y' || finalQuestion == 'Y')
@@ -136,7 +139,7 @@ int main()
             break;
         case 1:
             monsterHealth += monsterHealth; // revive monster for next fight
-            while (hasbeenRoom2 != 1)
+            while (hasbeenRoom2 != 0)
             {
                 cout << "Press enter to heal" << endl;
                 cin.ignore();
@@ -304,6 +307,8 @@ void initiatenormalFight()
         cout << "Press enter to attack again" << endl;
         cin.ignore();
         cin.get();
+        cout << ". . ." << endl;
+        victorySong();
         cout << "You have slayed " << monster << endl;
         monsterHealth -= playerDamage; // kills monster here
         hasbeenRoom1++;
