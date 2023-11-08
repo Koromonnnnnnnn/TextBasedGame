@@ -202,6 +202,7 @@ void shop()
     int input;
     while (input != '0')
     {
+        cout << "----------------------------" << endl;
         cout << "Welcome to the shop" << endl;
         cout << "Items for sale:" << endl;
         cout << "1) Cupcake: $5" << endl;
@@ -214,6 +215,7 @@ void shop()
             cout << shopInventory[i] << " ";
         cout << endl;
         cout << "What would you like to purchase?" << endl;
+        cout << "----------------------------" << endl;
         cin >> input;
         if (input == 1)
         {
