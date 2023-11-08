@@ -11,17 +11,17 @@ void shop();
 // Gens
 string monsterGen();
 string weaponGen();
+string attackGen();
 
 // Inventory
 string inventory[10];
 
-// Return
-string monster;
-string weapon;
+// monsters
+bool monstersData[5];
 
 // Battle
-void initiatebossFight();
-void initiatenormalFight();
+string initiatebossFight();
+string initiatenormalFight();
 
 // Songs
 void deathSong();
@@ -35,8 +35,15 @@ int main()
     for (int i = 0; i < 10; i++)
         inventory[i] = " ";
 
+    for (int i = 0; i < 5; i++)
+        monstersData[i] = false;
+
     int room = 1;
     char direction;
+
+    string monster;
+    string weapon;
+    string attack;
 
     cout << "Welcome to \"The Forgotten Prophecy\"" << endl;
     cout << "You wake up somewhere unknown. Bright green grass and orange trees surround you." << endl;
@@ -74,6 +81,8 @@ int main()
             break;
         case 3:
             cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
+            monster = monsterGen();
+            cout << "A wild " << monster << " lurks in the corner of the room!" << endl;
             cin >> direction;
             if (direction == 'N' || direction == 'n')
                 room = 2;
@@ -164,13 +173,27 @@ void victorySong()
     }
 }
 
+string attackGen()
+{
+
+    string attackItems[] = {"slams you onto the ground", "attacks you", "throws you", "claws you", "punches you"};
+
+    int numItems = sizeof(attackItems) / sizeof(attackItems[0]);
+
+    srand(time(0));
+
+    int randomIndex = rand() % numItems;
+
+    return attackItems[randomIndex];
+}
+
 void shop()
 {
     int input;
     while (input != '0')
     {
-        cout << "welcome to the shop" << endl;
-        cout << "items for sale:" << endl;
+        cout << "Welcome to the shop" << endl;
+        cout << "Items for sale:" << endl;
         cout << "1) Cupcake: $5" << endl;
         cout << "2) Sock: $10" << endl;
         cout << "3) Key: $50" << endl;
