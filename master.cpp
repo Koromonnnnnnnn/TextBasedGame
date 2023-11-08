@@ -63,7 +63,14 @@ int main()
             if (direction == 'W' || direction == 'w')
                 room = 1;
             if (direction == 'S' || direction == 's')
-                room = 3;
+                if (inventory[0] == "Key")
+                {
+                    cout << "you unlock the door with the key!" << endl;
+                    inventory[0] = " ";
+                    room = 3;
+                }
+                else
+                    cout << "the door is locked" << endl;
             break;
         case 3:
             cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
@@ -97,13 +104,6 @@ int main()
             if (direction == 'S' || direction == 'e')
                 room = 5;
             break;
-        case 7:
-
-        case 8:
-
-        case 9:
-
-        case 10:
         }
     }
 }
