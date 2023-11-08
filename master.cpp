@@ -90,6 +90,7 @@ int main()
             cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
             if (monstersData[0] != "true")
                 cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
+                initiatenormalFight();
             if (chestData[0] != "true")
                 cout << "A mysterious (C)hest is to your left." << endl;
             cin >> direction;
