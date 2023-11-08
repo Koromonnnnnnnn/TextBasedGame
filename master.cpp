@@ -186,7 +186,7 @@ void victorySong()
 string attackGen()
 {
 
-    string attackItems[] = {"slams you onto the ground", "attacks you", "throws you", "claws you", "punches you"};
+    string attackItems[] = {" slams you onto the ground", " attacks you", " throws you", " claws you", " punches you"};
 
     int numItems = sizeof(attackItems) / sizeof(attackItems[0]);
 
