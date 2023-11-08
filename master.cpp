@@ -156,10 +156,6 @@ string weaponGen()
     return chestItems[randomIndex];
 }
 
-void inventoryMenu()
-{
-}
-
 void deathSong()
 {
 
