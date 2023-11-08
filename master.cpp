@@ -16,8 +16,9 @@ string attackGen();
 // Inventory
 string inventory[10];
 
-// monsters
-bool monstersData[5];
+// data
+string monstersData[5];
+string chestData[5];
 
 // Battle
 string initiatebossFight();
@@ -36,7 +37,10 @@ int main()
         inventory[i] = " ";
 
     for (int i = 0; i < 5; i++)
-        monstersData[i] = false;
+        monstersData[i] = "false";
+
+    for (int i = 0; i < 5; i++)
+        chestData[i] = "false";
 
     int room = 1;
     char direction;
@@ -80,14 +84,23 @@ int main()
                     cout << "the door is locked" << endl;
             break;
         case 3:
-            cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
+            weapon = weaponGen();
             monster = monsterGen();
-            cout << "A wild " << monster << " lurks in the corner of the room!" << endl;
+            cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
+            if (monstersData[0] != "true")
+            cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
+            if (chestData[0] != "true")
+                cout << "A mysterious (C)hest is to your left." << endl;
             cin >> direction;
             if (direction == 'N' || direction == 'n')
                 room = 2;
             if (direction == 'S' || direction == 's')
                 room = 4;
+            if (chestData[0] == "false" && direction == 'C' || direction == 'c')
+                inventory[0] = weapon;
+                cout << inventory[0] << endl;
+                chestData[0] = "true";
+
             break;
         case 4:
             cout << "You are in 'Room Four', you can go (E)ast to 'Room Five', or (N)orth back to 'Room Three'" << endl;
