@@ -10,14 +10,14 @@ void shop();
 
 // Gens
 string monsterGen();
-string lootGen();
+string weaponGen();
 
 // Inventory
 string inventory[10];
 
 // Return
 string monster;
-string loot;
+string weapon;
 
 // Battle
 void initiatebossFight();
@@ -121,7 +121,7 @@ string monsterGen()
     return monsterItems[randomIndex];
 }
 
-string lootGen()
+string weaponGen()
 {
     string chestItems[] = {"Sword", "Spear", "Trident", "Bow", "Godly Bolt"};
 
