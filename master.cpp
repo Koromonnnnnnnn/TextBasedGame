@@ -50,7 +50,7 @@ int main()
     cout << "Your memory is foggy and you can't quite remember anything about yourself, or how you got to this mysterious place." << endl;
     cout << "The only path forward is a steep set of ancient stone stairs." << endl;
 
-    while (1)
+    while (gameLoop)
     {
         switch (room)
         {
