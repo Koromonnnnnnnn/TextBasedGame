@@ -15,6 +15,7 @@ string attackGen();
 
 // Inventory
 string inventory[10];
+string shopInventory[10]; //second inventory for organization
 
 // data
 string monstersData[5];
@@ -88,7 +89,7 @@ int main()
             monster = monsterGen();
             cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
             if (monstersData[0] != "true")
-            cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
+                cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
             if (chestData[0] != "true")
                 cout << "A mysterious (C)hest is to your left." << endl;
             cin >> direction;
@@ -98,8 +99,8 @@ int main()
                 room = 4;
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
                 inventory[0] = weapon;
-                cout << inventory[0] << endl;
-                chestData[0] = "true";
+            cout << inventory[0] << endl;
+            chestData[0] = "true";
 
             break;
         case 4:
@@ -210,7 +211,7 @@ void shop()
         cout << "0 to QUIT" << endl;
         cout << "Your Gold: " << gold << endl;
         for (int i = 0; i < 10; i++)
-            cout << inventory[i] << " ";
+            cout << shopInventory[i] << " ";
         cout << endl;
         cout << "What would you like to purchase?" << endl;
         cin >> input;
@@ -219,7 +220,7 @@ void shop()
             if (gold >= 5)
             {
                 cout << "You bought the cupcake!" << endl;
-                inventory[1] = "Cupcake";
+                shopInventory[1] = "Cupcake";
                 gold -= 5;
             }
             else
@@ -230,7 +231,7 @@ void shop()
             if (gold >= 10)
             {
                 cout << "You bought the sock!" << endl;
-                inventory[2] = "Sock";
+                shopInventory[2] = "Sock";
                 gold -= 10;
             }
         }
@@ -239,7 +240,7 @@ void shop()
             if (gold > -50)
             {
                 cout << "You bought the key!" << endl;
-                inventory[0] = "Key";
+                shopInventory[0] = "Key";
                 gold -= 50;
             }
         }
