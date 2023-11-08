@@ -5,7 +5,7 @@ using namespace std;
 bool gameLoop = true;
 
 // Shop
-int gold = 100;
+int gold = 0;
 void shop();
 
 // Gens
@@ -94,6 +94,13 @@ int main()
             if (direction == 'S' || direction == 'e')
                 room = 5;
             break;
+        case 7:
+
+        case 8:
+
+        case 9:
+
+        case 10:
         }
     }
 }
