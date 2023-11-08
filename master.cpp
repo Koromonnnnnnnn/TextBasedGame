@@ -19,7 +19,6 @@ string inventory[10];
 string monster;
 string loot;
 
-
 // Battle
 void initiatebossFight();
 void initiatenormalFight();
@@ -50,9 +49,13 @@ int main()
         {
         case 1:
             cout << "You are in 'Room One', do you wish to go (E)ast towards 'Room Two'?" << endl;
+            if (inventory[0] != "Key")
+                cout << "You see a (K)ey on the floor." << endl;
             cin >> direction;
             if (direction == 'E' || direction == 'e')
                 room = 2;
+            if (direction == 'K' || direction == 'k')
+                inventory[0] = "Key";
             break;
         case 2:
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
@@ -90,7 +93,7 @@ int main()
             cout << "You are in 'Room Six', you can go (E)ast to 'Room Seven', or (S)outh back to 'Room Five'" << endl;
             cin >> direction;
             if (direction == 'E' || direction == 'e')
-                room = 4; //fix when add more rooms (change to 7)
+                room = 4; // fix when add more rooms (change to 7)
             if (direction == 'S' || direction == 'e')
                 room = 5;
             break;
