@@ -20,6 +20,7 @@ string shopInventory[10]; //second inventory for organization
 // data
 string monstersData[5];
 string chestData[5];
+string marketData[1];
 
 // Battle
 string initiatebossFight();
@@ -32,6 +33,10 @@ void welcomeSong();
 void attackSong();
 void damageSong();
 
+// Other
+
+string blackMarket();
+
 int main()
 {
     for (int i = 0; i < 10; i++)
@@ -42,6 +47,10 @@ int main()
 
     for (int i = 0; i < 5; i++)
         chestData[i] = "false";
+
+    for (int i = 0; i < 1; i++)
+        marketData[i] = "false";
+
 
     int room = 1;
     char direction;
@@ -253,4 +262,38 @@ void shop()
         }
         break;
     }
+}
+
+string blackMarket(){
+    string userName;
+    string userPassword;
+    int loginAttempt = 0;
+
+    while (loginAttempt < 5)
+    {
+        cout << "----------------------------" << endl;
+        cout << "Please enter your user name: ";
+        cin >> userName;
+        cout << "Please enter your user password: ";
+        cin >> userPassword;
+
+        if (userName == "cool" && userPassword == "kid")
+        {
+            cout << "Welcome to the black market!\n";
+            break;
+        }
+        else
+        {
+            cout << "Invalid login attempt. Please try again.\n" << '\n';
+            loginAttempt++;
+        }
+    }
+    if (loginAttempt == 5)
+    {
+            cout << "Too many login attempts! The program will now terminate.";
+            return 0;
+    }
+
+    cout << "Thank you for logging in.\n";
+    cout << "How would you like to proceed \n";
 }
