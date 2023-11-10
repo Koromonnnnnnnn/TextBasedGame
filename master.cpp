@@ -35,7 +35,7 @@ void damageSong();
 
 // Other
 
-string blackMarket();
+void blackMarket();
 
 int main()
 {
@@ -108,6 +108,7 @@ int main()
             if (direction == 'S' || direction == 's')
                 room = 4;
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
+                cout << "You open the chest and receive a " << weapon << endl;
                 inventory[0] = weapon;
             cout << inventory[0] << endl;
             chestData[0] = "true";
@@ -264,7 +265,7 @@ void shop()
     }
 }
 
-string blackMarket(){
+void blackMarket(){
     string userName;
     string userPassword;
     int loginAttempt = 0;
@@ -291,9 +292,8 @@ string blackMarket(){
     if (loginAttempt == 5)
     {
             cout << "Too many login attempts! The program will now terminate.";
-            return 0;
     }
 
     cout << "Thank you for logging in.\n";
     cout << "How would you like to proceed \n";
-}
+ }
