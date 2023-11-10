@@ -15,7 +15,7 @@ string attackGen();
 
 // Inventory
 string inventory[10];
-string shopInventory[10]; //second inventory for organization
+string shopInventory[10]; // second inventory for organization
 
 // data
 string monstersData[5];
@@ -50,7 +50,6 @@ int main()
 
     for (int i = 0; i < 1; i++)
         marketData[i] = "false";
-
 
     int room = 1;
     char direction;
@@ -108,8 +107,7 @@ int main()
                 room = 4;
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
                 cout << "You open the chest and receive a " << weapon << endl;
-                inventory[0] = weapon;
-            cout << inventory[0] << endl;
+            inventory[0] = weapon;
             chestData[0] = "true";
 
             break;
@@ -264,7 +262,8 @@ void shop()
     }
 }
 
-void blackMarket(){
+void blackMarket()
+{
     string userName;
     string userPassword;
     int loginAttempt = 0;
@@ -284,15 +283,16 @@ void blackMarket(){
         }
         else
         {
-            cout << "Invalid login attempt. Please try again.\n" << '\n';
+            cout << "Invalid login attempt. Please try again.\n"
+                 << '\n';
             loginAttempt++;
         }
     }
     if (loginAttempt == 5)
     {
-            cout << "Too many login attempts! The program will now terminate.";
+        cout << "Too many login attempts! The program will now terminate.";
     }
 
     cout << "Thank you for logging in.\n";
     cout << "How would you like to proceed \n";
- }
+}
