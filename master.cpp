@@ -20,6 +20,7 @@ string shopInventory[10]; // second inventory for organization
 // data
 string monstersData[5];
 string chestData[5];
+string roomData[10];
 string marketData[1];
 
 // Battle
@@ -50,6 +51,9 @@ int main()
 
     for (int i = 0; i < 1; i++)
         marketData[i] = "false";
+
+    for (int i = 0; i < 10; i++)
+        roomData[i] = "false";
 
     int room = 1;
     char direction;
