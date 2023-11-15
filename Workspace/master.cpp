@@ -126,7 +126,7 @@ int main()
                     room = 4;
                 else
                     cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
-                    cout << "The monster" << attack << endl;
+                    cout << "The monster" << attack << endl; //didn't get a chance to impliment damage yet
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
                 cout << "You open the chest and receive a " << weapon << endl;
             inventory[0] = weapon;
