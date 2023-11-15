@@ -79,6 +79,7 @@ int main()
             if (direction == 'E' || direction == 'e')
                 room = 2;
             if (direction == 'K' || direction == 'k')
+                cout << "you pick up a key!" << endl;
                 inventory[0] = "Key";
             break;
         case 2:
