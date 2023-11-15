@@ -38,6 +38,9 @@ void damageSong();
 
 void blackMarket();
 
+string petActions();
+int petAffinity = 0;
+
 int main()
 {
     for (int i = 0; i < 10; i++)
@@ -299,4 +302,20 @@ void blackMarket()
 
     cout << "Thank you for logging in.\n";
     cout << "How would you like to proceed \n";
+}
+
+string petActions(){
+
+    string petItems[] = {"Pet: Bark!", "Pet: Scratches behind ear.", "Pet: Wags tail."};
+
+    int numItems = sizeof(petItems) / sizeof(petItems[0]);
+
+    srand(time(0));
+
+    int randomIndex = rand() % numItems;
+    petAffinity++;
+    cout << "Current pet affinity is: " << petAffinity << endl;
+
+    return petItems[randomIndex];
+
 }
