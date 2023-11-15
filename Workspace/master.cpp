@@ -38,13 +38,19 @@ void damageSong();
 
 void blackMarket();
 
+// Pet
 string petActions();
+string petGenerator();
 int petAffinity = 0;
+string pet[1];
 
 int main()
 {
     for (int i = 0; i < 10; i++)
         inventory[i] = " ";
+
+    for (int i = 0; i < 1; i++)
+        pet[i] = " ";
 
     for (int i = 0; i < 5; i++)
         monstersData[i] = "false";
@@ -64,6 +70,8 @@ int main()
     string monster;
     string weapon;
     string attack;
+    string petRand;
+    string currentPet;
 
     cout << "Welcome to \"The Forgotten Prophecy\"" << endl;
     cout << "You wake up somewhere unknown. Bright green grass and orange trees surround you." << endl;
@@ -111,21 +119,31 @@ int main()
             if (direction == 'N' || direction == 'n')
                 room = 2;
             if (direction == 'S' || direction == 's')
-                room = 4;
+                if (roomData[2] != "false")
+                    room = 4;
+                else
+                    cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
                 cout << "You open the chest and receive a " << weapon << endl;
             inventory[0] = weapon;
             chestData[0] = "true";
-            cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
-
             break;
         case 4:
-            cout << "You are in 'Room Four', you can go (E)ast to 'Room Five', or (N)orth back to 'Room Three'" << endl;
+            petRand = petActions();
+            currentPet = petGenerator();
+            cout << "You are in 'Room Four' (Cave), you can go (E)ast to 'Room Five', or (N)orth back to 'Room Three'" << endl;
+            cout << "A (p)et approaches you, would you like to pet it?" << endl;
             cin >> direction;
             if (direction == 'N' || direction == 'n')
                 room = 3;
             if (direction == 'E' || direction == 'e')
                 room = 5;
+            if (direction == 'D' || direction == 'd')
+                cout << "You pet the " << currentPet << petRand << endl;
+            petAffinity++;
+            cout << "Current pet affinity is: " << petAffinity << endl;
+            pet[0] = currentPet;
+
             break;
         case 5:
             cout << "You are in 'Room Five', you can go (N)orth to 'Room Six', or (W)est back to 'Room Four'" << endl;
@@ -315,8 +333,20 @@ string petActions()
     srand(time(0));
 
     int randomIndex = rand() % numItems;
-    petAffinity++;
-    cout << "Current pet affinity is: " << petAffinity << endl;
 
     return petItems[randomIndex];
+}
+
+string petGenerator()
+{
+
+    string petgenItems[] = {"Dog", "Dragon", "Bird", "Undead", "Godly Cat"};
+
+    int numItems = sizeof(petgenItems) / sizeof(petgenItems[0]);
+
+    srand(time(0));
+
+    int randomIndex = rand() % numItems;
+
+    return petgenItems[randomIndex];
 }
