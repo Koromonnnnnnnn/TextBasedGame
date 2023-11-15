@@ -83,7 +83,7 @@ int main()
                 room = 2;
             if (direction == 'K' || direction == 'k')
                 cout << "you pick up a key!" << endl;
-                inventory[0] = "Key";
+            inventory[0] = "Key";
             break;
         case 2:
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
@@ -106,7 +106,7 @@ int main()
             if (chestData[0] != "true")
                 cout << "A mysterious (C)hest is to your left." << endl;
             if (chestData[0] == "true")
-            cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
+                cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
             cin >> direction;
             if (direction == 'N' || direction == 'n')
                 room = 2;
@@ -305,7 +305,8 @@ void blackMarket()
     cout << "How would you like to proceed \n";
 }
 
-string petActions(){
+string petActions()
+{
 
     string petItems[] = {"Pet: Bark!", "Pet: Scratches behind ear.", "Pet: Wags tail."};
 
@@ -318,5 +319,4 @@ string petActions(){
     cout << "Current pet affinity is: " << petAffinity << endl;
 
     return petItems[randomIndex];
-
 }
