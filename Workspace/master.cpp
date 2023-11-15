@@ -103,10 +103,10 @@ int main()
         case 3:
             weapon = weaponGen();
             monster = monsterGen();
-            cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
-            cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
             if (chestData[0] != "true")
                 cout << "A mysterious (C)hest is to your left." << endl;
+            if (chestData[0] == "true")
+            cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
             cin >> direction;
             if (direction == 'N' || direction == 'n')
                 room = 2;
@@ -116,6 +116,7 @@ int main()
                 cout << "You open the chest and receive a " << weapon << endl;
             inventory[0] = weapon;
             chestData[0] = "true";
+            cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
 
             break;
         case 4:
