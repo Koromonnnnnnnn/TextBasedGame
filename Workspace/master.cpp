@@ -138,7 +138,7 @@ int main()
                 room = 3;
             if (direction == 'E' || direction == 'e')
                 room = 5;
-            if (direction == 'D' || direction == 'd')
+            if (direction == 'P' || direction == 'p')
                 cout << "You pet the " << currentPet << petRand << endl;
             petAffinity++;
             cout << "Current pet affinity is: " << petAffinity << endl;
@@ -326,7 +326,7 @@ void blackMarket()
 string petActions()
 {
 
-    string petItems[] = {"Pet: Bark!", "Pet: Scratches behind ear.", "Pet: Wags tail."};
+    string petItems[] = {"Pet: Moo!", "Pet: Scratches behind ear.", "Pet: Wags tail."};
 
     int numItems = sizeof(petItems) / sizeof(petItems[0]);
 
