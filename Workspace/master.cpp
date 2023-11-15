@@ -12,6 +12,7 @@ void shop();
 string monsterGen();
 string weaponGen();
 string attackGen();
+int damageGen();
 
 // Inventory
 string inventory[10];
@@ -68,6 +69,7 @@ int main()
     char direction;
 
     string monster;
+    string damage;
     string weapon;
     string attack;
     string petRand;
@@ -111,6 +113,7 @@ int main()
         case 3:
             weapon = weaponGen();
             monster = monsterGen();
+            attack = attackGen();
             if (chestData[0] != "true")
                 cout << "A mysterious (C)hest is to your left." << endl;
             if (chestData[0] == "true")
@@ -123,6 +126,7 @@ int main()
                     room = 4;
                 else
                     cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
+                    cout << "The monster" << attack << endl;
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
                 cout << "You open the chest and receive a " << weapon << endl;
             inventory[0] = weapon;
@@ -349,4 +353,8 @@ string petGenerator()
     int randomIndex = rand() % numItems;
 
     return petgenItems[randomIndex];
+}
+
+int damageGen()
+{
 }
