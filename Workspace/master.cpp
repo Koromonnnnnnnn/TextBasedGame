@@ -132,13 +132,12 @@ int main()
             if (direction == 'N' || direction == 'n')
                 room = 2;
             if (direction == 'S' || direction == 's')
-                if (roomData[2] != "false")
-                    room = 4;
+                room = 4;
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
                 cout << "You open the chest and receive a " << weapon << endl;
                 inventory[0] = weapon;
                 chestData[0] = "true";
-            if (chestData[0] == "true" && monstersData[0] != "true")
+            if (chestData[0] == "true" && monstersData[0] != "true" )
                 cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
                 cout << "The monster" << attack << " and does " << damage << " damage!" << endl; // didn't get a chance to impliment damage yet
                 playerHealth -= damage;
@@ -156,12 +155,12 @@ int main()
                 room = 3;
             if (direction == 'E' || direction == 'e')
                 room = 5;
-            if (direction == 'P' || direction == 'p')
-                cout << "You pet the " << currentPet << petRand << endl;
-            petAffinity++;
-            cout << "Current pet affinity is: " << petAffinity << endl;
-            pet[0] = currentPet;
-
+            if (direction == 'P' || direction == 'p' && pet[0] != currentPet)
+                cout << "You pet the " << currentPet << endl;
+                cout << petRand << endl;
+                petAffinity++;
+                cout << "Current pet affinity is: " << petAffinity << endl;
+                pet[0] = currentPet;
             break;
         case 5:
             cout << "You are in 'Room Five', you can go (N)orth to 'Room Six', or (W)est back to 'Room Four'" << endl;
@@ -344,7 +343,7 @@ void blackMarket()
 string petActions()
 {
 
-    string petItems[] = {"Pet: Moo!", "Pet: Scratches behind ear.", "Pet: Wags tail."};
+    string petItems[] = {" Pet: Moo!", " Pet: Scratches behind ear.", " Pet: Wags tail."};
 
     int numItems = sizeof(petItems) / sizeof(petItems[0]);
 
