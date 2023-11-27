@@ -138,13 +138,13 @@ int main()
                 cout << "You open the chest and receive a " << weapon << endl;
                 inventory[0] = weapon;
                 chestData[0] = "true";
-            else if (chestData[0] != "false")
+            if (chestData[0] == "true" && monstersData[0] != "true")
                 cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
                 cout << "The monster" << attack << " and does " << damage << " damage!" << endl; // didn't get a chance to impliment damage yet
                 playerHealth -= damage;
                 cout << "Your health is now " << playerHealth << endl;
                 cout << "You strike down the " << monster << " with your " << weapon << endl;
-            monstersData[0] = "true";
+                monstersData[0] = "true";
             break;
         case 4:
             petRand = petActions();
