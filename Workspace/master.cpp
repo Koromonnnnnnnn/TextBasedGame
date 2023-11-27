@@ -85,9 +85,13 @@ int main()
     // strings to store the value that my generator functions return.
 
     cout << "Welcome to \"The Forgotten Prophecy\"" << endl;
+    Sleep(1000);
     cout << "You wake up somewhere unknown. Bright green grass and orange trees surround you." << endl;
+    Sleep(1000);
     cout << "Your memory is foggy and you can't quite remember anything about yourself, or how you got to this mysterious place." << endl;
+    Sleep(1000);
     cout << "The only path forward is a steep set of ancient stone stairs." << endl;
+    Sleep(1000);
 
     while (gameLoop)
     {
@@ -95,6 +99,7 @@ int main()
         {
         case 1:
             cout << "You are in 'Room One', do you wish to go (E)ast towards 'Room Two'?" << endl;
+            Sleep(1000);
             if (inventory[0] != "Key")
                 cout << "You see a (K)ey on the floor." << endl;
             cin >> direction;
@@ -137,18 +142,24 @@ int main()
                 cout << "You open the chest and receive a " << weapon << endl;
                 inventory[0] = weapon;
                 chestData[0] = "true";
+                Sleep(1000);
             if (chestData[0] == "true" && monstersData[0] != "true" )
                 cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
+                Sleep(1000);
                 cout << "The monster" << attack << " and does " << damage << " damage!" << endl; // didn't get a chance to impliment damage yet
                 playerHealth -= damage;
+                Sleep(1000);
                 cout << "Your health is now " << playerHealth << endl;
+                Sleep(1000);
                 cout << "You strike down the " << monster << " with your " << weapon << endl;
                 monstersData[0] = "true";
+                Sleep(1000);
             break;
         case 4:
             petRand = petActions();
             currentPet = petGenerator();
             cout << "You are in 'Room Four' (Cave), you can go (E)ast to 'Room Five', or (N)orth back to 'Room Three'" << endl;
+            Sleep(1000);
             cout << "A (p)et approaches you, would you like to pet it?" << endl;
             cin >> direction;
             if (direction == 'N' || direction == 'n')
@@ -157,6 +168,7 @@ int main()
                 room = 5;
             if (direction == 'P' || direction == 'p' && pet[0] != currentPet)
                 cout << "You pet the " << currentPet << endl;
+                Sleep(1000);
                 cout << petRand << endl;
                 petAffinity++;
                 cout << "Current pet affinity is: " << petAffinity << endl;
