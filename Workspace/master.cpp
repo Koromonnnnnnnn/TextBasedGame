@@ -19,10 +19,10 @@ string inventory[10];
 string shopInventory[10]; // second inventory for organization
 
 // data
-string monstersData[5];
-string chestData[5];
-string roomData[10];
-string marketData[1];
+string monstersData[5]; //What monsters has the player defeated?
+string chestData[5]; //What chests has the user already opened?
+string roomData[10]; //What rooms has the user been in?
+string marketData[1]; //Has the user opened the black market yet?
 
 // Battle
 string initiatebossFight();
@@ -35,6 +35,11 @@ void welcomeSong();
 void attackSong();
 void damageSong();
 
+// Health Values
+int playerHealth = 100;
+int monsterHealth = 50;
+int bossHealh = 200;
+
 // Other
 
 void blackMarket();
@@ -42,8 +47,8 @@ void blackMarket();
 // Pet
 string petActions();
 string petGenerator();
-int petAffinity = 0;
-string pet[1];
+int petAffinity = 0; //self-explanitory
+string pet[1]; //this way I can make sure the player only generates one pet.
 
 int main()
 {
@@ -65,6 +70,8 @@ int main()
     for (int i = 0; i < 10; i++)
         roomData[i] = "false";
 
+    //initialize all of the lists
+
     int room = 1;
     char direction;
 
@@ -74,6 +81,8 @@ int main()
     string attack;
     string petRand;
     string currentPet;
+
+    //strings to store the value that my generator functions return.
 
     cout << "Welcome to \"The Forgotten Prophecy\"" << endl;
     cout << "You wake up somewhere unknown. Bright green grass and orange trees surround you." << endl;
@@ -93,7 +102,7 @@ int main()
                 room = 2;
             if (direction == 'K' || direction == 'k')
                 cout << "you pick up a key!" << endl;
-            inventory[0] = "Key";
+            inventory[0] = "Key"; //This key will be required to open the door in the next room
             break;
         case 2:
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
