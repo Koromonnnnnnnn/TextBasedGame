@@ -19,10 +19,10 @@ string inventory[10];
 string shopInventory[10]; // second inventory for organization
 
 // data
-string monstersData[5]; //What monsters has the player defeated?
-string chestData[5]; //What chests has the user already opened?
-string roomData[10]; //What rooms has the user been in?
-string marketData[1]; //Has the user opened the black market yet?
+string monstersData[5]; // What monsters has the player defeated?
+string chestData[5];    // What chests has the user already opened?
+string roomData[10];    // What rooms has the user been in?
+string marketData[1];   // Has the user opened the black market yet?
 
 // Battle
 string initiatebossFight();
@@ -47,8 +47,8 @@ void blackMarket();
 // Pet
 string petActions();
 string petGenerator();
-int petAffinity = 0; //self-explanitory
-string pet[1]; //this way I can make sure the player only generates one pet.
+int petAffinity = 0; // self-explanitory
+string pet[1];       // this way I can make sure the player only generates one pet.
 
 int main()
 {
@@ -70,19 +70,19 @@ int main()
     for (int i = 0; i < 10; i++)
         roomData[i] = "false";
 
-    //initialize all of the lists
+    // initialize all of the lists
 
     int room = 1;
     char direction;
 
     string monster;
-    string damage;
+    int damage;
     string weapon;
     string attack;
     string petRand;
     string currentPet;
 
-    //strings to store the value that my generator functions return.
+    // strings to store the value that my generator functions return.
 
     cout << "Welcome to \"The Forgotten Prophecy\"" << endl;
     cout << "You wake up somewhere unknown. Bright green grass and orange trees surround you." << endl;
@@ -102,7 +102,7 @@ int main()
                 room = 2;
             if (direction == 'K' || direction == 'k')
                 cout << "you pick up a key!" << endl;
-            inventory[0] = "Key"; //This key will be required to open the door in the next room
+            inventory[0] = "Key"; // This key will be required to open the door in the next room
             break;
         case 2:
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
@@ -123,6 +123,7 @@ int main()
             weapon = weaponGen();
             monster = monsterGen();
             attack = attackGen();
+            damage = damageGen();
             if (chestData[0] != "true")
                 cout << "A mysterious (C)hest is to your left." << endl;
             if (chestData[0] == "true")
@@ -133,13 +134,17 @@ int main()
             if (direction == 'S' || direction == 's')
                 if (roomData[2] != "false")
                     room = 4;
-                else
-                    cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
-                    cout << "The monster" << attack << endl; //didn't get a chance to impliment damage yet
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
                 cout << "You open the chest and receive a " << weapon << endl;
-            inventory[0] = weapon;
-            chestData[0] = "true";
+                inventory[0] = weapon;
+                chestData[0] = "true";
+            else if (chestData[0] != "false")
+                cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
+                cout << "The monster" << attack << " and does " << damage << " damage!" << endl; // didn't get a chance to impliment damage yet
+                playerHealth -= damage;
+                cout << "Your health is now " << playerHealth << endl;
+                cout << "You strike down the " << monster << " with your " << weapon << endl;
+            monstersData[0] = "true";
             break;
         case 4:
             petRand = petActions();
@@ -366,4 +371,13 @@ string petGenerator()
 
 int damageGen()
 {
+    int damageItems[] = {10, 20, 30, 40, 50};
+
+    int numItems = sizeof(damageItems) / sizeof(damageItems[0]);
+
+    srand(time(0));
+
+    int randomIndex = rand() % numItems;
+
+    return damageItems[randomIndex];
 }
