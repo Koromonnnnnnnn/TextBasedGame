@@ -259,6 +259,8 @@ __░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
             cout << "Your health is now " << playerHealth << endl;
             Sleep(1000);
             cout << "You strike down the " << monster << " with your " << weapon << endl;
+            cout << "Incredible victory music plays..." << endl;
+            victorySong();
             monstersData[0] = "true";
             Sleep(1000);
             break;
