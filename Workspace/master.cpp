@@ -133,27 +133,34 @@ int main()
                 cout << "A mysterious (C)hest is to your left." << endl;
             if (chestData[0] == "true")
                 cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
+                Sleep(1000);
             cin >> direction;
             if (direction == 'N' || direction == 'n')
                 room = 2;
-            if (direction == 'S' || direction == 's')
+            if (direction == 'S' || direction == 's' && monstersData[0] == "true")
                 room = 4;
+            else if (direction == 'S' || direction == 's' && monstersData[0] == "true")
+                cout << "You may not pass, there is a monster blocking the entrance!";
+                Sleep(1000);
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
                 cout << "You open the chest and receive a " << weapon << endl;
                 inventory[0] = weapon;
                 chestData[0] = "true";
                 Sleep(1000);
-            if (chestData[0] == "true" && monstersData[0] != "true" )
+            if (chestData[0] == "true" && monstersData[0] == "false")
                 cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
-                Sleep(1000);
-                cout << "The monster" << attack << " and does " << damage << " damage!" << endl; // didn't get a chance to impliment damage yet
-                playerHealth -= damage;
-                Sleep(1000);
-                cout << "Your health is now " << playerHealth << endl;
-                Sleep(1000);
-                cout << "You strike down the " << monster << " with your " << weapon << endl;
-                monstersData[0] = "true";
-                Sleep(1000);
+                cout << "Press 0  to attack!" << endl;
+                cin >> direction;
+                if (direction == '0' || direction == '0')
+                    Sleep(1000);
+                    cout << "The monster" << attack << " and does " << damage << " damage!" << endl; // didn't get a chance to impliment damage yet
+                    playerHealth -= damage;
+                    Sleep(1000);
+                    cout << "Your health is now " << playerHealth << endl;
+                    Sleep(1000);
+                    cout << "You strike down the " << monster << " with your " << weapon << endl;
+                    monstersData[0] = "true";
+                    Sleep(1000);
             break;
         case 4:
             petRand = petActions();
