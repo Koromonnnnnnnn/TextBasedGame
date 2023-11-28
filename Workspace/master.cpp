@@ -149,6 +149,7 @@ int main()
                 Sleep(1000);
             if (chestData[0] == "true" && monstersData[0] == "false")
                 cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
+                Sleep(1000);
                 cout << "Press 0  to attack!" << endl;
                 cin >> direction;
                 if (direction == '0' || direction == '0')
