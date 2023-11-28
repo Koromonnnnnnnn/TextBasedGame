@@ -83,7 +83,16 @@ int main()
     string currentPet;
 
     // strings to store the value that my generator functions return.
+    cout << R"(
 
+        __        __   _                          
+\ \      / /__| | ___ ___  _ __ ___   ___ 
+ \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \
+  \ V  V /  __/ | (_| (_) | | | | | |  __/
+   \_/\_/ \___|_|\___\___/|_| |_| |_|\___|
+
+    )" << endl;
+    Sleep(1000);
     cout << "Welcome to \"The Forgotten Prophecy\"" << endl;
     Sleep(1000);
     cout << "You wake up somewhere unknown. Bright green grass and orange trees surround you." << endl;
