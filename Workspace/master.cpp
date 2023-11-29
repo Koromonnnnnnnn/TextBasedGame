@@ -162,6 +162,7 @@ ____________░░▒▒▒▒▒▒░░____▓▓▓▓░░▓▓▒▒▒�
             if (direction == 'K' || direction == 'k')
                 cout << "you pick up a key!" << endl;
             if (roomData[0] != "true")
+            {
                 cout << R"(
 
 ________________________________________________________██████__________
@@ -181,8 +182,9 @@ ________________________________________________________██████______
                     
                     )"
                      << endl;
-            roomData[0] = "true";
-            inventory[0] = "Key"; // This key will be required to open the door in the next room
+                roomData[0] = "true";
+                inventory[0] = "Key";
+            } // This key will be required to open the door in the next room
             break;
         case 2:
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
@@ -207,17 +209,22 @@ ________________________________________________________██████______
             if (chestData[0] != "true")
                 cout << "A mysterious (C)hest is to your left." << endl;
             if (chestData[0] == "true")
+            {
                 cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
-            Sleep(1000);
+                Sleep(1000);
+            }
             cin >> direction;
             if (direction == 'N' || direction == 'n')
                 room = 2;
             if (direction == 'S' || direction == 's' && monstersData[0] == "true")
                 room = 4;
             else if (direction == 'S' || direction == 's' && monstersData[0] == "true")
+            {
                 cout << "You may not pass, there is a monster blocking the entrance!";
-            Sleep(1000);
+                Sleep(1000);
+            }
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
+            {
                 cout << R"(
 ________________________________________________________________________________▓▓▓▓____________________
 ________________________________________________________________▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░____
@@ -244,27 +251,32 @@ ____▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░▓▓▓�
 __░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒________________▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░
 
                 )" << endl;
-            cout << "You open the chest and receive a " << weapon << endl;
-            inventory[0] = weapon;
-            chestData[0] = "true";
-            Sleep(1000);
+                cout << "You open the chest and receive a " << weapon << endl;
+                inventory[0] = weapon;
+                chestData[0] = "true";
+                Sleep(1000);
+            }
             if (chestData[0] == "true" && monstersData[0] == "false")
+            {
                 cout << "A wild " << monster << " lurks in the corner of the room! It is blocking the enterance to the Cave." << endl;
-            Sleep(1000);
-            cout << "Press 0  to attack!" << endl;
+                Sleep(1000);
+                cout << "Press 0  to attack!" << endl;
+            }
             cin >> direction;
             if (direction == '0' || direction == '0')
+            {
                 Sleep(1000);
-            cout << "The monster" << attack << " and does " << damage << " damage!" << endl; // didn't get a chance to impliment damage yet
-            playerHealth -= damage;
-            Sleep(1000);
-            cout << "Your health is now " << playerHealth << endl;
-            Sleep(1000);
-            cout << "You strike down the " << monster << " with your " << weapon << endl;
-            cout << "Incredible victory music plays..." << endl;
-            victorySong();
-            monstersData[0] = "true";
-            Sleep(1000);
+                cout << "The monster" << attack << " and does " << damage << " damage!" << endl; // didn't get a chance to impliment damage yet
+                playerHealth -= damage;
+                Sleep(1000);
+                cout << "Your health is now " << playerHealth << endl;
+                Sleep(1000);
+                cout << "You strike down the " << monster << " with your " << weapon << endl;
+                cout << "Incredible victory music plays..." << endl;
+                victorySong();
+                monstersData[0] = "true";
+                Sleep(1000);
+            }
             break;
         case 4:
             petRand = petActions();
@@ -278,12 +290,15 @@ __░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
             if (direction == 'E' || direction == 'e')
                 room = 5;
             if (direction == 'P' || direction == 'p' && pet[0] != currentPet)
+            {
                 cout << "You pet the " << currentPet << endl;
-            Sleep(1000);
-            cout << petRand << endl;
-            petAffinity++;
-            cout << "Current pet affinity is: " << petAffinity << endl;
-            pet[0] = currentPet;
+                Sleep(1000);
+                cout << petRand << endl;
+                Sleep(1000);
+                petAffinity++;
+                cout << "Current pet affinity is: " << petAffinity << endl;
+                pet[0] = currentPet;
+            }
             break;
         case 5:
             cout << "You are in 'Room Five', you can go (N)orth to 'Room Six', or (W)est back to 'Room Four'" << endl;
