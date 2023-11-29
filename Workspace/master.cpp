@@ -1,5 +1,6 @@
 #include <iostream>
 #include <Windows.h>
+#include <string>
 using namespace std;
 
 bool gameLoop = true;
@@ -23,6 +24,7 @@ string monstersData[5]; // What monsters has the player defeated?
 string chestData[5];    // What chests has the user already opened?
 string roomData[10];    // What rooms has the user been in?
 string marketData[1];   // Has the user opened the black market yet?
+string doorData[5];     // Doors Opened
 
 // Battle
 string initiatebossFight();
@@ -69,6 +71,9 @@ int main()
 
     for (int i = 0; i < 10; i++)
         roomData[i] = "false";
+
+    for (int i = 0; i < 5; i++)
+        doorData[i] = "false";
 
     // initialize all of the lists
 
@@ -218,7 +223,7 @@ ________________________________________________________██████______
                 room = 2;
             if (direction == 'S' || direction == 's' && monstersData[0] == "true")
                 room = 4;
-            else if (direction == 'S' || direction == 's' && monstersData[0] == "true")
+            else if (direction == 'S' || direction == 's' && monstersData[0] == "false")
             {
                 cout << "You may not pass, there is a monster blocking the entrance!";
                 Sleep(1000);
@@ -283,7 +288,11 @@ __░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
             currentPet = petGenerator();
             cout << "You are in 'Room Four' (Cave), you can go (E)ast to 'Room Five', or (N)orth back to 'Room Three'" << endl;
             Sleep(1000);
-            cout << "A (p)et approaches you, would you like to pet it?" << endl;
+            if (roomData[3] != "true")
+            {
+                cout << "A (p)et approaches you, would you like to pet it?" << endl;
+                roomData[3] = "true";
+            }
             cin >> direction;
             if (direction == 'N' || direction == 'n')
                 room = 3;
@@ -363,11 +372,13 @@ __________________________░░__▓▓██▓▓▓▓▓▓▓▓▓▓▓�
             if (direction == 'N' || direction == 'N')
                 room = 6;
             if (direction == 'B' || direction == 'b')
+            {
                 cout << "You feel powered up and your wounds from the previous battle are now healed!" << endl;
-            playerHealth += damage;
-            Sleep(1000);
-            cout << "Health is now: " << playerHealth << endl;
-            Sleep(1000);
+                playerHealth += damage;
+                Sleep(1000);
+                cout << "Health is now: " << playerHealth << endl;
+                Sleep(1000);
+            }
             break;
         case 6:
             cout << "You are in 'Room Six', you can go (E)ast to 'Room Seven', or (S)outh back to 'Room Five'" << endl;
