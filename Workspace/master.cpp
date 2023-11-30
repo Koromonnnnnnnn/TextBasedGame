@@ -410,6 +410,11 @@ ____________████████████______________________________�
             if (direction == 'S' || direction == 'e')
                 room = 5;
             break;
+        case 7:
+            cout << "You are in 'Room ', you can go () to 'Room ', or () back to 'Room '" << endl;
+            Sleep(1000);
+            cout << "There is a (sh)op in the corner!" << endl;
+            break;
         }
     }
 }
@@ -575,7 +580,7 @@ void blackMarket()
 string petActions()
 {
 
-    string petItems[] = {" Pet: Moo!", " Pet: Scratches behind ear.", " Pet: Wags tail."};
+    string petItems[] = {"Pet: Moo!", "Pet: Scratches behind ear.", "Pet: Wags tail."};
 
     int numItems = sizeof(petItems) / sizeof(petItems[0]);
 
