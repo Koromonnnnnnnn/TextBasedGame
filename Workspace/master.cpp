@@ -411,7 +411,7 @@ ____________████████████______________________________�
                 room = 5;
             break;
         case 7:
-            cout << "You are in 'Room ', you can go () to 'Room ', or () back to 'Room '" << endl;
+            cout << "" << endl;
             Sleep(1000);
             cout << "There is a (sh)op in the corner!" << endl;
             break;
