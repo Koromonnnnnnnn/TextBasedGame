@@ -1,6 +1,7 @@
 #include <iostream>
 #include <Windows.h>
 #include <string>
+#include "data.h"
 using namespace std;
 
 bool gameLoop = true;
