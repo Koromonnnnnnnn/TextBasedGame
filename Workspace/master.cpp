@@ -258,7 +258,7 @@ __        __   _
                 room = 5;
             break;
         case 7:
-            cout << "" << endl;
+            cout << "You are in 'Room Seven', you can go" << endl;
             Sleep(1000);
             cout << "There is a (sh)op in the corner!" << endl;
             break;
