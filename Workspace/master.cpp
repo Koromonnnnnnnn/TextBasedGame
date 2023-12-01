@@ -27,10 +27,6 @@ string roomData[10];    // What rooms has the user been in?
 string marketData[1];   // Has the user opened the black market yet?
 string doorData[5];     // Doors Opened
 
-// Battle
-string initiatebossFight();
-string initiatenormalFight();
-
 // Songs
 void deathSong();
 void victorySong();
