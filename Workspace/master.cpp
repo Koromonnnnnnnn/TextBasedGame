@@ -30,9 +30,6 @@ string doorData[5];     // Doors Opened
 // Songs
 void deathSong();
 void victorySong();
-void welcomeSong();
-void attackSong();
-void damageSong();
 
 // Health Values
 int playerHealth = 100;
