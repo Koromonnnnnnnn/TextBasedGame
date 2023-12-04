@@ -250,7 +250,7 @@ __        __   _
             }
             cin >> direction;
             if (direction == 'E' || direction == 'e')
-                room = 4; // fix when add more rooms (change to 7)
+                room = 7;
             if (direction == 'S' || direction == 'e')
                 room = 5;
             if (direction == 'C' || direction == 'c' && roomData[5] != "true")
@@ -264,7 +264,22 @@ __        __   _
         case 7:
             cout << "You are in 'Room Seven', you can go" << endl;
             Sleep(1000);
-            cout << "There is a (sh)op in the corner!" << endl;
+            if (roomData[6] != "true")
+            {
+                cout << "There is a (sh)op in the corner!" << endl;
+            }
+            cin >> direction;
+            if (direction == 'E' || direction == 'e')
+                room = 8;
+            if (direction == 'E' || direction == 'e') // change values later
+                room = 6;
+            if (direction == 'Sh' || direction == 'sh' && roomData[6] != "true")
+            {
+                market();
+                shop();
+                cout << "The shop self destructed" << endl;
+                roomData[6] == "true";
+            }
             break;
         case 8:
             cout << "You are in 'Room Eight', you can go" << endl;
