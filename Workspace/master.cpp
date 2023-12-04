@@ -223,13 +223,16 @@ __        __   _
             Sleep(1000);
             burger();
             Sleep(1000);
-            cout << "Thoughts: I'm starving, maybe I should eat this mysterious (B)urger." << endl;
+            if (roomData[4] != "true")
+            {
+                cout << "Thoughts: I'm starving, maybe I should eat this mysterious (B)urger." << endl;
+            }
             cin >> direction;
             if (direction == 'W' || direction == 'w')
                 room = 4;
             if (direction == 'N' || direction == 'N')
                 room = 6;
-            if (direction == 'B' || direction == 'b')
+            if (direction == 'B' || direction == 'b' && roomData[5] != "true")
             {
                 cout << "You feel powered up and your wounds from the previous battle are now healed!" << endl;
                 playerHealth += damage;
@@ -237,6 +240,7 @@ __        __   _
                 Sleep(1000);
                 cout << "Health is now: " << playerHealth << endl;
                 Sleep(1000);
+                roomData[4] = "true";
             }
             break;
         case 6:
@@ -273,12 +277,12 @@ __        __   _
                 room = 8;
             if (direction == 'E' || direction == 'e') // change values later
                 room = 6;
-            if (direction == 'Sh' || direction == 'sh' && roomData[6] != "true")
+            if (direction == 'S' || direction == 's' && roomData[6] != "true")
             {
                 market();
                 shop();
                 cout << "The shop self destructed" << endl;
-                roomData[6] == "true";
+                roomData[6] = "true";
             }
             break;
         case 8:
