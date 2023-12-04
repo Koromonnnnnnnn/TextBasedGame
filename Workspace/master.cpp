@@ -255,6 +255,18 @@ __        __   _
             Sleep(1000);
             cout << "There is a (sh)op in the corner!" << endl;
             break;
+        case 8:
+            cout << "You are in 'Room Eight', you can go" << endl;
+            Sleep(1000);
+            break;
+        case 9:
+            cout << "You are in 'Room Nine', you can go" << endl;
+            Sleep(1000);
+            break;
+        case 10:
+            cout << "You are in 'Room Ten', you can go" << endl;
+            Sleep(1000);
+            break;
         }
     }
 }
