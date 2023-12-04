@@ -249,6 +249,12 @@ __        __   _
                 room = 4; // fix when add more rooms (change to 7)
             if (direction == 'S' || direction == 'e')
                 room = 5;
+            if (direction == 'C' || direction == 'c')
+            {
+                gold += 100;
+                cout << "You now have " << gold << " gold!" << endl;
+            }
+
             break;
         case 7:
             cout << "You are in 'Room Seven', you can go" << endl;
