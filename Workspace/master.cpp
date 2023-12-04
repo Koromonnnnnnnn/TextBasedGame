@@ -236,7 +236,7 @@ __        __   _
             {
                 cout << "You feel powered up and your wounds from the previous battle are now healed!" << endl;
                 playerHealth += damage;
-                cout << "Thoughts: Wow that was a good burger." << endl;
+                cout << "Thoughts: Wow that was a good burger!" << endl;
                 Sleep(1000);
                 cout << "Health is now: " << playerHealth << endl;
                 Sleep(1000);
