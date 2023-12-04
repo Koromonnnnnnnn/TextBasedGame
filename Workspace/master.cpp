@@ -402,6 +402,8 @@ void shop()
                 shopInventory[2] = "Sock";
                 gold -= 10;
             }
+            else
+                cout << "You dont have enough gold!" << endl;
         }
         else if (input == 3)
         {
@@ -411,6 +413,8 @@ void shop()
                 shopInventory[0] = "Key";
                 gold -= 50;
             }
+            else
+                cout << "You dont have enough gold!" << endl;
         }
         else
         {
