@@ -253,7 +253,7 @@ __        __   _
                 room = 4; // fix when add more rooms (change to 7)
             if (direction == 'S' || direction == 'e')
                 room = 5;
-            if (direction == 'C' || direction == 'c')
+            if (direction == 'C' || direction == 'c' && roomData[5] != "true")
             {
                 gold += 100;
                 cout << "You now have " << gold << " gold!" << endl;
