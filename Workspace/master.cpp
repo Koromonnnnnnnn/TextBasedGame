@@ -233,6 +233,7 @@ __        __   _
             {
                 cout << "You feel powered up and your wounds from the previous battle are now healed!" << endl;
                 playerHealth += damage;
+                cout << "Thoughts: Wow that was a good burger." << endl;
                 Sleep(1000);
                 cout << "Health is now: " << playerHealth << endl;
                 Sleep(1000);
@@ -241,9 +242,12 @@ __        __   _
         case 6:
             cout << "You are in 'Room Six', you can go (E)ast to 'Room Seven', or (S)outh back to 'Room Five'" << endl;
             Sleep(1000);
-            cout << "There are some (C)oins on the ground!" << endl;
-            Sleep(1000);
-            coins();
+            if (roomData[5] != "true")
+            {
+                cout << "There are some (C)oins on the ground!" << endl;
+                Sleep(1000);
+                coins();
+            }
             cin >> direction;
             if (direction == 'E' || direction == 'e')
                 room = 4; // fix when add more rooms (change to 7)
@@ -253,6 +257,7 @@ __        __   _
             {
                 gold += 100;
                 cout << "You now have " << gold << " gold!" << endl;
+                roomData[5] = "true";
             }
 
             break;
