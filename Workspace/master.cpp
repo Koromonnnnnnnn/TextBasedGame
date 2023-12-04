@@ -373,7 +373,7 @@ void shop()
         cout << "Items for sale:" << endl;
         cout << "1) Cupcake: $5" << endl;
         cout << "2) Sock: $10" << endl;
-        cout << "3) Key: $50" << endl;
+        cout << "3) Girl Crusher Perfume: $50" << endl;
         cout << "Your Inventory:" << endl;
         cout << "0 to QUIT" << endl;
         cout << "Your Gold: " << gold << endl;
@@ -407,10 +407,10 @@ void shop()
         }
         else if (input == 3)
         {
-            if (gold > -50)
+            if (gold >= 50)
             {
-                cout << "You bought the key!" << endl;
-                shopInventory[0] = "Key";
+                cout << "You bought the Girl Crusher Perfume!" << endl;
+                shopInventory[0] = "Girl_Crusher_Perfume";
                 gold -= 50;
             }
             else
