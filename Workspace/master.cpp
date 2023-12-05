@@ -234,7 +234,7 @@ __        __   _
                 room = 6;
             if (direction == 'B' || direction == 'b' && roomData[5] != "true")
             {
-                cout << "You feel powered up and your wounds from the previous battle are now healed!" << endl;
+                cout << "You feel powered up and some of your wounds from the previous battle are now healed!" << endl;
                 playerHealth += damage;
                 cout << "Thoughts: Wow that was a good burger!" << endl;
                 Sleep(1000);
