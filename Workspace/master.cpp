@@ -319,6 +319,15 @@ __        __   _
                     Sleep(1000);
                     cout << "The boss is intoxicated by your sent and explodes into a ball of flames!" << endl;
                     Sleep(1000);
+                    cout << "Incredible victory music plays..." << endl;
+                    victorySong();
+                    Sleep(1000);
+                    cout <<  "A bright mysterious square of light appears... You walk through and your suddenly back home, like nothing had ever happened" << endl;
+                    Sleep(1000);
+                    cout << "Was it just a dream? No,,, It felt too real." << endl;
+                    Sleep(1000);
+                    cout << "I guess we'll never know" << endl;
+                    gameLoop = false;
                 }
                 else
                 {
