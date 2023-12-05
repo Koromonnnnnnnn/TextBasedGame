@@ -122,7 +122,7 @@ __        __   _
                 roomData[0] = "true";
                 inventory[0] = "Key";
             } // This key will be required to open the door in the next room
-            
+
             break;
         case 2:
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
@@ -292,15 +292,15 @@ __        __   _
 
             break;
         case 8:
-            cout << "You are in 'Room Eight', you can go" << endl;
+            cout << "You are in 'Room Eight', you can go (S)outh to 'Room Nine, or (W)est back to 'Room Seven'" << endl;
             Sleep(1000);
             break;
         case 9:
-            cout << "You are in 'Room Nine', you can go" << endl;
+            cout << "You are in 'Room Nine', you can go North-(E)ast to 'Room 10', or (N)orth back to 'Room Eight'" << endl;
             Sleep(1000);
             break;
         case 10:
-            cout << "You are in 'Room Ten', you can go" << endl;
+            cout << "You are in 'Room Ten', you can go (S)outh back to 'Room Nine'" << endl;
             Sleep(1000);
             break;
         }
