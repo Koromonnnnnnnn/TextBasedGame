@@ -122,6 +122,7 @@ __        __   _
                 roomData[0] = "true";
                 inventory[0] = "Key";
             } // This key will be required to open the door in the next room
+            
             break;
         case 2:
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
@@ -137,6 +138,7 @@ __        __   _
                 }
                 else
                     cout << "the door is locked" << endl;
+
             break;
         case 3:
             weapon = weaponGen();
@@ -189,6 +191,7 @@ __        __   _
                 monstersData[0] = "true";
                 Sleep(1000);
             }
+
             break;
         case 4:
             petRand = petActions();
@@ -215,6 +218,7 @@ __        __   _
                 cout << "Current pet affinity is: " << petAffinity << endl;
                 pet[0] = currentPet;
             }
+
             break;
         case 5:
             cout << "You are in 'Room Five', you can go (N)orth to 'Room Six', or (W)est back to 'Room Four'" << endl;
@@ -242,6 +246,7 @@ __        __   _
                 Sleep(1000);
                 roomData[4] = "true";
             }
+
             break;
         case 6:
             cout << "You are in 'Room Six', you can go (E)ast to 'Room Seven', or (S)outh back to 'Room Five'" << endl;
@@ -266,11 +271,11 @@ __        __   _
 
             break;
         case 7:
-            cout << "You are in 'Room Seven', you can go" << endl;
+            cout << "You are in 'Room Seven', you can go (E)ast to 'Room Eight', or (W)est back to 'Room Six'" << endl;
             Sleep(1000);
             if (roomData[6] != "true")
             {
-                cout << "There is a (sh)op in the corner!" << endl;
+                cout << "There is a (s)hop in the corner!" << endl;
             }
             cin >> direction;
             if (direction == 'E' || direction == 'e')
@@ -284,6 +289,7 @@ __        __   _
                 cout << "The shop self destructed" << endl;
                 roomData[6] = "true";
             }
+
             break;
         case 8:
             cout << "You are in 'Room Eight', you can go" << endl;
