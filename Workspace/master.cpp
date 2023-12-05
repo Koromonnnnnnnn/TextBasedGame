@@ -284,7 +284,7 @@ __        __   _
             cin >> direction;
             if (direction == 'E' || direction == 'e')
                 room = 8;
-            if (direction == 'W' || direction == 'w') 
+            if (direction == 'W' || direction == 'w')
                 room = 6;
             if (direction == 'S' || direction == 's' && roomData[6] != "true")
             {
@@ -322,7 +322,7 @@ __        __   _
                     cout << "Incredible victory music plays..." << endl;
                     victorySong();
                     Sleep(1000);
-                    cout <<  "A bright mysterious square of light appears... You walk through and your suddenly back home, like nothing had ever happened" << endl;
+                    cout << "A bright mysterious square of light appears... You walk through and your suddenly back home, like nothing had ever happened" << endl;
                     Sleep(1000);
                     cout << "Was it just a dream? No,,, It felt too real." << endl;
                     Sleep(1000);
