@@ -284,7 +284,7 @@ __        __   _
             cin >> direction;
             if (direction == 'E' || direction == 'e')
                 room = 8;
-            if (direction == 'E' || direction == 'e') // change values later
+            if (direction == 'W' || direction == 'w')
                 room = 6;
             if (direction == 'S' || direction == 's' && roomData[6] != "true")
             {
