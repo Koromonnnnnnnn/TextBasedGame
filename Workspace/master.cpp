@@ -219,12 +219,12 @@ __        __   _
         case 5:
             cout << "You are in 'Room Five', you can go (N)orth to 'Room Six', or (W)est back to 'Room Four'" << endl;
             Sleep(1000);
-            cout << "You spot some food on the ground..." << endl;
-            Sleep(1000);
-            burger();
-            Sleep(1000);
             if (roomData[4] != "true")
             {
+                cout << "You spot some food on the ground..." << endl;
+                Sleep(1000);
+                burger();
+                Sleep(1000);
                 cout << "Thoughts: I'm starving, maybe I should eat this mysterious (B)urger." << endl;
             }
             cin >> direction;
