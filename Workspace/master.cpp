@@ -180,7 +180,7 @@ __        __   _
                 cout << "Press 0  to attack!" << endl;
             }
             cin >> direction;
-            if (direction == '0' || direction == '0')
+            if (direction == '0' || direction == '0' && monstersData[0] == "false")
             {
                 Sleep(1000);
                 cout << "The monster" << attack << " and does " << damage << " damage!" << endl; // didn't get a chance to impliment damage yet
@@ -284,7 +284,7 @@ __        __   _
             cin >> direction;
             if (direction == 'E' || direction == 'e')
                 room = 8;
-            if (direction == 'W' || direction == 'w')
+            if (direction == 'W' || direction == 'w') 
                 room = 6;
             if (direction == 'S' || direction == 's' && roomData[6] != "true")
             {
