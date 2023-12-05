@@ -70,7 +70,7 @@ int main()
         doorData[i] = "false";
 
     for (int i = 0; i < 10; i++)
-        cout << shopInventory[i] << " ";
+        shopInventory[i] = " ";
 
     // initialize all of the lists
 
