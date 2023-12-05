@@ -69,6 +69,9 @@ int main()
     for (int i = 0; i < 5; i++)
         doorData[i] = "false";
 
+    for (int i = 0; i < 10; i++)
+        cout << shopInventory[i] << " ";
+
     // initialize all of the lists
 
     int room = 1;
@@ -276,6 +279,7 @@ __        __   _
             if (roomData[6] != "true")
             {
                 cout << "There is a (s)hop in the corner!" << endl;
+                cout << "Hint: The Girl Crusher Perfume might be useful later on!" << endl;
             }
             cin >> direction;
             if (direction == 'E' || direction == 'e')
@@ -300,8 +304,36 @@ __        __   _
             Sleep(1000);
             break;
         case 10:
-            cout << "You are in 'Room Ten', you can go (S)outh back to 'Room Nine'" << endl;
+            cout << "You are in 'Room Ten', the ground starts rumbling..." << endl;
             Sleep(1000);
+            boss();
+            cout << "A boss spawned, fight for your life!" << endl;
+            Sleep(1000);
+            if (shopInventory[0] == "Girl_Crusher_Perfume")
+            {
+                cout << "Hint: (U)se your Girl Crusher Perfume to completely obliterate the boss!" << endl;
+                cin >> direction;
+                if (direction == 'U' || direction == 'u')
+                {
+                    fire();
+                    Sleep(1000);
+                    cout << "The boss is intoxicated by your sent and explodes into a ball of flames!" << endl;
+                    Sleep(1000);
+                }
+                else
+                {
+                    cout << "You fight bravely; with no idea how you got here and you're already fighting an unknown creature with your " << inventory[0] << endl;
+                    Sleep(1000);
+                    cout << "The boss grabs you and squeezes you till you turn into a donut and perish..." << endl;
+                    Sleep(1000);
+                    cout << "You failed to escape the terrors of this mysterious place..." << endl;
+                    Sleep(1000);
+                    cout << "Scary death music plays..." << endl;
+                    deathSong();
+                    gameLoop = false;
+                }
+            }
+
             break;
         }
     }
@@ -387,8 +419,6 @@ void shop()
         cout << "Your Inventory:" << endl;
         cout << "0 to QUIT" << endl;
         cout << "Your Gold: " << gold << endl;
-        for (int i = 0; i < 10; i++)
-            cout << shopInventory[i] << " ";
         cout << endl;
         cout << "What would you like to purchase?" << endl;
         cout << "----------------------------" << endl;
