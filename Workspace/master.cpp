@@ -324,6 +324,8 @@ __        __   _
                 {
                     cout << "You fight bravely; with no idea how you got here and you're already fighting an unknown creature with your " << inventory[0] << endl;
                     Sleep(1000);
+                    cout << "No matter how hard you try, you can not scratch the boss... You begint to accept your fate" << endl;
+                    Sleep(1000);
                     cout << "The boss grabs you and squeezes you till you turn into a donut and perish..." << endl;
                     Sleep(1000);
                     cout << "You failed to escape the terrors of this mysterious place..." << endl;
