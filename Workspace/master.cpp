@@ -136,7 +136,7 @@ __        __   _
                 if (inventory[0] == "Key")
                 {
                     cout << "you unlock the door with the key!" << endl;
-                    inventory[0] = " ";
+                    inventory[0] = " "; //remove key from inventory
                     room = 3;
                 }
                 else
