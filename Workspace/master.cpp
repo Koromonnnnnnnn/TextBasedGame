@@ -239,7 +239,7 @@ __        __   _
                 room = 4;
             if (direction == 'N' || direction == 'N')
                 room = 6;
-            if (direction == 'B' || direction == 'b' && roomData[5] != "true")
+            if (direction == 'B' || direction == 'b' && roomData[4] != "true")
             {
                 cout << "You feel powered up and some of your wounds from the previous battle are now healed!" << endl;
                 playerHealth += damage;
