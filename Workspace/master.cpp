@@ -289,6 +289,7 @@ __        __   _
             if (direction == 'S' || direction == 's' && roomData[6] != "true")
             {
                 market();
+                Sleep(1000);
                 shop();
                 cout << "The shop self destructed" << endl;
                 roomData[6] = "true";
