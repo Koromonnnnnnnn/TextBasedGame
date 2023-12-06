@@ -297,11 +297,19 @@ __        __   _
             break;
         case 8:
             cout << "You are in 'Room Eight', you can go (S)outh to 'Room Nine, or (W)est back to 'Room Seven'" << endl;
-            Sleep(1000);
+            if (direction == 'S' || direction == 's')
+                room = 9;
+            if (direction == 'W' || direction == 'w')
+                room = 7;
+
             break;
         case 9:
             cout << "You are in 'Room Nine', you can go North-(E)ast to 'Room 10', or (N)orth back to 'Room Eight'" << endl;
-            Sleep(1000);
+            if (direction == 'E' || direction == 'e')
+                room = 10;
+            if (direction == 'N' || direction == 'n')
+                room = 8;
+
             break;
         case 10:
             cout << "You are in 'Room Ten', the ground starts rumbling..." << endl;
