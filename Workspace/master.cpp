@@ -297,6 +297,7 @@ __        __   _
 
             break;
         case 8:
+            roomData[7] = "true";
             cout << "You are in 'Room Eight', you can go (S)outh to 'Room Nine, or (W)est back to 'Room Seven'" << endl;
             cin >> direction;
             if (direction == 'S' || direction == 's')
@@ -306,6 +307,7 @@ __        __   _
 
             break;
         case 9:
+            roomData[8] = "true";
             cout << "You are in 'Room Nine', you can go North-(E)ast to 'Room 10', or (N)orth back to 'Room Eight'" << endl;
             cin >> direction;
             if (direction == 'E' || direction == 'e')
