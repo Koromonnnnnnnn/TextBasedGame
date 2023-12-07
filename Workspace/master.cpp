@@ -85,6 +85,7 @@ int main()
     string currentPet;
 
     // strings to store the value that my generator functions return.
+    cout << "───────────────────────────────────────────────────────────────────────" << endl;
     cout << R"(
 __        __   _                          
 \ \      / /__| | ___ ___  _ __ ___   ___ 
@@ -104,6 +105,7 @@ __        __   _
     Sleep(1000);
     cout << "The only path forward is a steep set of ancient stone stairs." << endl;
     Sleep(1000);
+    cout << "───────────────────────────────────────────────────────────────────────" << endl;
 
     while (gameLoop)
     {
@@ -126,6 +128,7 @@ __        __   _
                 inventory[0] = "Key";
             } // This key will be required to open the door in the next room
 
+            cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 2:
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
@@ -147,6 +150,7 @@ __        __   _
                 else
                     cout << "the door is locked" << endl;
 
+            cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 3:
             weapon = weaponGen();
@@ -200,6 +204,7 @@ __        __   _
                 Sleep(1000);
             }
 
+            cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 4:
             petRand = petActions();
@@ -227,6 +232,7 @@ __        __   _
                 pet[0] = currentPet;
             }
 
+            cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 5:
             cout << "You are in 'Room Five', you can go (N)orth to 'Room Six', or (W)est back to 'Room Four'" << endl;
@@ -255,6 +261,7 @@ __        __   _
                 roomData[4] = "true";
             }
 
+            cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 6:
             cout << "You are in 'Room Six', you can go (E)ast to 'Room Seven', or (S)outh back to 'Room Five'" << endl;
@@ -277,6 +284,7 @@ __        __   _
                 roomData[5] = "true";
             }
 
+            cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 7:
             cout << "You are in 'Room Seven', you can go (E)ast to 'Room Eight', or (W)est back to 'Room Six'" << endl;
@@ -300,6 +308,7 @@ __        __   _
                 roomData[6] = "true";
             }
 
+            cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 8:
             roomData[7] = "true";
@@ -320,6 +329,7 @@ __        __   _
             if (direction == 'N' || direction == 'n')
                 room = 8;
 
+            cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 10:
             cout << "You are in 'Room Ten', the ground starts rumbling..." << endl;
@@ -364,6 +374,7 @@ __        __   _
                 }
             }
 
+            cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         }
     }
