@@ -347,6 +347,8 @@ __        __   _
                     Sleep(1000);
                     cout << "The boss grabs you and squeezes you till you turn into a donut and perish..." << endl;
                     Sleep(1000);
+                    death();
+                    Sleep(1000);
                     cout << "You failed to escape the terrors of this mysterious place..." << endl;
                     Sleep(1000);
                     cout << "Scary death music plays..." << endl;
