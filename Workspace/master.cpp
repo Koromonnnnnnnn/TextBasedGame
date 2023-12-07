@@ -319,6 +319,7 @@ __        __   _
             if (direction == 'W' || direction == 'w')
                 room = 7;
 
+            cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 9:
             roomData[8] = "true";
