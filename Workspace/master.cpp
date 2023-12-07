@@ -133,11 +133,16 @@ __        __   _
             if (direction == 'W' || direction == 'w')
                 room = 1;
             if (direction == 'S' || direction == 's')
-                if (inventory[0] == "Key")
+                if (inventory[0] == "Key" && roomData[1] != "true")
                 {
                     cout << "you unlock the door with the key!" << endl;
                     inventory[0] = " "; // remove key from inventory
+                    roomData[1] = "true";
                     room = 3;
+                }
+                else if (roomData[1] == "true")
+                {
+                    room = 3; // if door already open then go straight to room 3
                 }
                 else
                     cout << "the door is locked" << endl;
@@ -183,7 +188,7 @@ __        __   _
             if (direction == '0' || direction == '0' && monstersData[0] == "false")
             {
                 Sleep(1000);
-                cout << "The monster" << attack << " and does " << damage << " damage!" << endl; 
+                cout << "The monster" << attack << " and does " << damage << " damage!" << endl;
                 playerHealth -= damage;
                 Sleep(1000);
                 cout << "Your health is now " << playerHealth << endl;
