@@ -141,9 +141,10 @@ __        __   _
                     cout << "you unlock the door with the key!" << endl;
                     inventory[0] = " "; // remove key from inventory
                     roomData[1] = "true";
+                    doorData[0] = "true";
                     room = 3;
                 }
-                else if (roomData[1] == "true")
+                else if (roomData[1] == "true" && doorData[0] == "true")
                 {
                     room = 3; // if door already open then go straight to room 3
                 }
