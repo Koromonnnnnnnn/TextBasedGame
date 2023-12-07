@@ -183,7 +183,7 @@ __        __   _
             if (direction == '0' || direction == '0' && monstersData[0] == "false")
             {
                 Sleep(1000);
-                cout << "The monster" << attack << " and does " << damage << " damage!" << endl; // didn't get a chance to impliment damage yet
+                cout << "The monster" << attack << " and does " << damage << " damage!" << endl; 
                 playerHealth -= damage;
                 Sleep(1000);
                 cout << "Your health is now " << playerHealth << endl;
