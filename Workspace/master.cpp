@@ -97,7 +97,7 @@ __        __   _
     Sleep(1000);
     tree();
     Sleep(1000);
-    cout << "Welcome to \"The Forgotten Prophecy\"" << endl;
+    cout << "Welcome to \"The Forgotten Prophecy\"" << endl; // introduction
     Sleep(1000);
     cout << "You wake up somewhere unknown. Bright green grass and orange trees surround you." << endl;
     Sleep(1000);
@@ -112,7 +112,8 @@ __        __   _
         switch (room)
         {
         case 1:
-            cout << "" << endl;
+            cout << "A thick mist coated the grass." << endl;
+            cout << "As you look around, it seems safe to go forward..." << endl;
             cout << "You are in 'Room One', do you wish to go (E)ast towards 'Room Two'?" << endl;
             Sleep(1000);
             if (inventory[0] != "Key")
