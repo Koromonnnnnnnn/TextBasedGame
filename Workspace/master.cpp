@@ -112,6 +112,7 @@ __        __   _
         switch (room)
         {
         case 1:
+            cout << "" << endl;
             cout << "You are in 'Room One', do you wish to go (E)ast towards 'Room Two'?" << endl;
             Sleep(1000);
             if (inventory[0] != "Key")
@@ -131,6 +132,7 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 2:
+            cout << "" << endl;
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
             cin >> direction;
             if (direction == 'W' || direction == 'w')
@@ -162,6 +164,7 @@ __        __   _
                 cout << "A mysterious (C)hest is to your left." << endl;
             if (chestData[0] == "true")
             {
+                cout << "" << endl;
                 cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
                 Sleep(1000);
             }
@@ -210,6 +213,7 @@ __        __   _
         case 4:
             petRand = petActions();
             currentPet = petGenerator();
+            cout << "" << endl;
             cout << "You are in 'Room Four' (Cave), you can go (E)ast to 'Room Five', or (N)orth back to 'Room Three'" << endl;
             Sleep(1000);
             if (roomData[3] != "true")
@@ -236,6 +240,7 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 5:
+            cout << "" << endl;
             cout << "You are in 'Room Five', you can go (N)orth to 'Room Six', or (W)est back to 'Room Four'" << endl;
             Sleep(1000);
             if (roomData[4] != "true")
@@ -265,6 +270,7 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 6:
+            cout << "" << endl;
             cout << "You are in 'Room Six', you can go (E)ast to 'Room Seven', or (S)outh back to 'Room Five'" << endl;
             Sleep(1000);
             if (roomData[5] != "true")
@@ -288,6 +294,7 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 7:
+            cout << "" << endl;
             cout << "You are in 'Room Seven', you can go (E)ast to 'Room Eight', or (W)est back to 'Room Six'" << endl;
             Sleep(1000);
             if (roomData[6] != "true")
@@ -313,6 +320,7 @@ __        __   _
             break;
         case 8:
             roomData[7] = "true";
+            cout << "" << endl;
             cout << "You are in 'Room Eight', you can go (S)outh to 'Room Nine, or (W)est back to 'Room Seven'" << endl;
             cin >> direction;
             if (direction == 'S' || direction == 's')
@@ -324,6 +332,7 @@ __        __   _
             break;
         case 9:
             roomData[8] = "true";
+            cout << "" << endl;
             cout << "You are in 'Room Nine', you can go North-(E)ast to 'Room 10', or (N)orth back to 'Room Eight'" << endl;
             cin >> direction;
             if (direction == 'E' || direction == 'e')
@@ -334,6 +343,7 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 10:
+            cout << "" << endl;
             cout << "You are in 'Room Ten', the ground starts rumbling..." << endl;
             Sleep(1000);
             boss();
