@@ -133,7 +133,7 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 2:
-            cout << "" << endl;
+            cout << "Face to face with 2 giant slate doors; a small keyhole in the middle." << endl;
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
             cin >> direction;
             if (direction == 'W' || direction == 'w')
@@ -142,6 +142,7 @@ __        __   _
                 if (inventory[0] == "Key" && roomData[1] != "true")
                 {
                     cout << "you unlock the door with the key!" << endl;
+                    cout << "The ground rumbles as the giant doors creak open..." << endl;
                     inventory[0] = " "; // remove key from inventory
                     roomData[1] = "true";
                     doorData[0] = "true";
