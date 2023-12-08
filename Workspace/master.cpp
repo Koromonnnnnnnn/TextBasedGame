@@ -177,15 +177,15 @@ __        __   _
                 room = 4;
             else if (direction == 'S' || direction == 's' && monstersData[0] == "false")
             {
-                cout << "You may not pass, there is a monster blocking the entrance!";
+                cout << "You may not pass, there is a monster blocking the entrance!"; // force player to fight monster if they try to avoid it
                 Sleep(1000);
             }
             if (chestData[0] == "false" && direction == 'C' || direction == 'c')
             {
                 chest();
                 cout << "You open the chest and receive a " << weapon << endl;
-                inventory[0] = weapon;
-                chestData[0] = "true";
+                inventory[0] = weapon; // store the weapon generated
+                chestData[0] = "true"; // so that player can't open the chest twice
                 Sleep(1000);
             }
             if (chestData[0] == "true" && monstersData[0] == "false")
@@ -195,7 +195,7 @@ __        __   _
                 cout << "Press 0  to attack!" << endl;
             }
             cin >> direction;
-            if (direction == '0' || direction == '0' && monstersData[0] == "false")
+            if (direction == '0' || direction == '0' && monstersData[0] == "false") // battle
             {
                 Sleep(1000);
                 cout << "The monster" << attack << " and does " << damage << " damage!" << endl;
