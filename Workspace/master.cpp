@@ -320,7 +320,10 @@ __        __   _
             break;
         case 8:
             roomData[7] = "true";
-            cout << "" << endl;
+            cout << "You notice your " << pet[0] << " acting strange..." << endl;
+            Sleep(1000);
+            cout << "There is nothing in sight to warrant this, so you continue your journey throughout this unknown place..." << endl;
+            Sleep(1000);
             cout << "You are in 'Room Eight', you can go (S)outh to 'Room Nine, or (W)est back to 'Room Seven'" << endl;
             cin >> direction;
             if (direction == 'S' || direction == 's')
