@@ -339,7 +339,7 @@ __        __   _
             boss();
             cout << "A boss spawned, fight for your life!" << endl;
             Sleep(1000);
-            if (shopInventory[0] == "Girl_Crusher_Perfume")
+            if (shopInventory[0] == "Girl_Crusher_Perfume") //can only win with the girl crusher perfume
             {
                 cout << "Hint: (U)se your Girl Crusher Perfume to completely obliterate the boss!" << endl;
                 cin >> direction;
