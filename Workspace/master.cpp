@@ -286,7 +286,7 @@ __        __   _
                 room = 5;
             if (direction == 'C' || direction == 'c' && roomData[5] != "true")
             {
-                gold += 100;
+                gold += 200;
                 cout << "You now have " << gold << " gold!" << endl;
                 roomData[5] = "true";
             }
@@ -332,7 +332,10 @@ __        __   _
             break;
         case 9:
             roomData[8] = "true";
-            cout << "" << endl;
+            cout << "This room has nothing special in it. No monsters, no chests, no creatures." << endl;
+            Sleep(1000);
+            cout << "You start to wonder what the purpose of this place was... Are you dreaming, pehaps?" << endl;
+            Sleep(1000);
             cout << "You are in 'Room Nine', you can go North-(E)ast to 'Room 10', or (N)orth back to 'Room Eight'" << endl;
             cin >> direction;
             if (direction == 'E' || direction == 'e')
@@ -343,13 +346,16 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 10:
-            cout << "" << endl;
+            cout << "As you walk into what seems to be the final room, you notice that the room is significantly larger than what you've seen before." << endl;
+            Sleep(1000);
+            cout << "A mysterious fog encircles a tree in the middle of the room." << endl;
+            Sleep(1000);
             cout << "You are in 'Room Ten', the ground starts rumbling..." << endl;
             Sleep(1000);
             boss();
             cout << "A boss spawned, fight for your life!" << endl;
             Sleep(1000);
-            if (shopInventory[0] == "Girl_Crusher_Perfume") //can only win with the girl crusher perfume
+            if (shopInventory[0] == "Girl_Crusher_Perfume") // can only win with the girl crusher perfume
             {
                 cout << "Hint: (U)se your Girl Crusher Perfume to completely obliterate the boss!" << endl;
                 cin >> direction;
