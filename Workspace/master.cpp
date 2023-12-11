@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Windows.h>
+#include <windows.h>
 #include <string>
 #include "data.h"
 using namespace std;
@@ -391,6 +391,8 @@ __        __   _
                     Sleep(1000);
                     death();
                     Sleep(1000);
+                    HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+                    SetConsoleTextAttribute(hStdOut, FOREGROUND_RED | BACKGROUND_RED | BACKGROUND_BLUE | BACKGROUND_BLUE);
                     cout << "You failed to escape the terrors of this mysterious place..." << endl;
                     Sleep(1000);
                     cout << "Scary death music plays..." << endl;
