@@ -105,6 +105,8 @@ __        __   _
     Sleep(1000);
     cout << "The only path forward is a steep set of ancient stone stairs." << endl;
     Sleep(1000);
+    cout << "Note: All input should be single character. Typing multi-character input could break the game." << endl;
+    Sleep(1000);
     cout << "───────────────────────────────────────────────────────────────────────" << endl;
 
     while (gameLoop)
