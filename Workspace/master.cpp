@@ -267,7 +267,6 @@ __        __   _
                 burger();
                 Sleep(1000);
                 cout << "Thoughts: I'm starving, maybe I should eat this mysterious (B)urger." << endl;
-                roomData[4] = "true";
             }
             cin >> direction;
             if (direction == 'W' || direction == 'w')
@@ -300,12 +299,11 @@ __        __   _
                 cout << "There are some (C)oins on the ground!" << endl;
                 Sleep(1000);
                 coins();
-                roomData[5] = "true";
             }
             cin >> direction;
             if (direction == 'E' || direction == 'e')
                 room = 7;
-            if (direction == 'S' || direction == 'e')
+            if (direction == 'S' || direction == 's')
                 room = 5;
             if (direction == 'C' || direction == 'c' && roomData[5] != "true")
             {
