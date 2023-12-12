@@ -114,8 +114,13 @@ __        __   _
         switch (room)
         {
         case 1:
-            cout << "A thick mist coated the grass." << endl;
-            cout << "As you look around, it seems safe to go forward..." << endl;
+            if (roomData[0] != "true")
+            {
+                cout << "A thick mist coated the grass." << endl;
+                Sleep(1000);
+                cout << "As you look around, it seems safe to go forward..." << endl;
+                Sleep(1000);
+            }
             cout << "You are in 'Room One', do you wish to go (E)ast towards 'Room Two'?" << endl;
             Sleep(1000);
             if (inventory[0] != "Key")
@@ -138,6 +143,7 @@ __        __   _
             if (roomData[1] != "true")
             {
                 cout << "Face to face with 2 giant slate doors; a small keyhole in the middle." << endl;
+                Sleep(1000);
             }
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
             cin >> direction;
@@ -147,6 +153,7 @@ __        __   _
                 if (inventory[0] == "Key" && roomData[1] != "true")
                 {
                     cout << "you unlock the door with the key!" << endl;
+                    Sleep(1000);
                     cout << "The ground rumbles as the giant doors creak open..." << endl;
                     inventory[0] = " "; // remove key from inventory
                     roomData[1] = "true";
