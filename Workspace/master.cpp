@@ -169,6 +169,7 @@ __        __   _
             if (chestData[0] == "true")
             {
                 cout << "" << endl;
+                Sleep(1000);
                 cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
                 Sleep(1000);
             }
@@ -218,6 +219,7 @@ __        __   _
             petRand = petActions();
             currentPet = petGenerator();
             cout << "" << endl;
+            Sleep(1000);
             cout << "You are in 'Room Four' (Cave), you can go (E)ast to 'Room Five', or (N)orth back to 'Room Three'" << endl;
             Sleep(1000);
             if (roomData[3] != "true")
@@ -245,6 +247,7 @@ __        __   _
             break;
         case 5:
             cout << "" << endl;
+            Sleep(1000);
             cout << "You are in 'Room Five', you can go (N)orth to 'Room Six', or (W)est back to 'Room Four'" << endl;
             Sleep(1000);
             if (roomData[4] != "true")
@@ -274,7 +277,8 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 6:
-            cout << "" << endl;
+            cout << "Rocks are spread out everywhere. A rough wind blows through the air." << endl;
+            Sleep(1000);
             cout << "You are in 'Room Six', you can go (E)ast to 'Room Seven', or (S)outh back to 'Room Five'" << endl;
             Sleep(1000);
             if (roomData[5] != "true")
@@ -299,6 +303,7 @@ __        __   _
             break;
         case 7:
             cout << "" << endl;
+            Sleep(1000);
             cout << "You are in 'Room Seven', you can go (E)ast to 'Room Eight', or (W)est back to 'Room Six'" << endl;
             Sleep(1000);
             if (roomData[6] != "true")
