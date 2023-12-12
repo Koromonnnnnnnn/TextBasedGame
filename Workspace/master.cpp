@@ -404,7 +404,7 @@ __        __   _
                     victorySong();
                     cout << "A bright mysterious square of light appears... You walk through and your suddenly back home, like nothing had ever happened" << endl;
                     Sleep(1000);
-                    cout << "Was it just a dream? No,,, It felt too real." << endl;
+                    cout << "Was it just a dream? No... It felt too real." << endl;
                     Sleep(1000);
                     cout << "I guess we'll never know" << endl;
                     gameLoop = false;
