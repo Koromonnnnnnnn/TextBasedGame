@@ -285,11 +285,10 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 6:
-            if (roomData[5] != "false")
+            if (roomData[5] != "true")
             {
                 cout << "Rocks are spread out everywhere. A rough wind blows through the air." << endl;
                 Sleep(1000);
-                roomData[5] != "false";
             }
             cout << "You are in 'Room Six', you can go (E)ast to 'Room Seven', or (S)outh back to 'Room Five'" << endl;
             Sleep(1000);
@@ -298,6 +297,7 @@ __        __   _
                 cout << "There are some (C)oins on the ground!" << endl;
                 Sleep(1000);
                 coins();
+                roomData[5] = "true";
             }
             cin >> direction;
             if (direction == 'E' || direction == 'e')
@@ -314,11 +314,11 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 7:
-            if (roomData[5] != "false")
+            if (roomData[5] != "true")
             {
                 cout << "You make your way into a smaller, less intimidating room. A tree is in the corner." << endl;
                 Sleep(1000);
-                roomData[6] != "false";
+                roomData[6] = "true";
             }
             cout << "You are in 'Room Seven', you can go (E)ast to 'Room Eight', or (W)est back to 'Room Six'" << endl;
             Sleep(1000);
@@ -344,9 +344,12 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 8:
-            roomData[7] = "true";
-            cout << "You notice your " << pet[0] << " acting strange..." << endl;
-            Sleep(1000);
+            if (roomData[7] != "true")
+            {
+                cout << "You notice your " << pet[0] << " acting strange..." << endl;
+                Sleep(1000);
+                roomData[7] = "true";
+            }
             cout << "There is nothing strange in sight to warrant this behaviour, so you continue your journey throughout this unknown place..." << endl;
             Sleep(1000);
             cout << "You are in 'Room Eight', you can go (S)outh to 'Room Nine, or (W)est back to 'Room Seven'" << endl;
