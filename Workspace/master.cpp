@@ -273,7 +273,7 @@ __        __   _
             if (roomData[4] != "true")
             {
                 cout << "You spot some food on the ground..." << endl;
-                Sleep(1000);
+                Sleep(2000);
                 burger();
                 Sleep(1000);
                 cout << "Thoughts: I'm starving, maybe I should eat this mysterious (B)urger." << endl;
@@ -396,7 +396,7 @@ __        __   _
             cout << "A mysterious fog encircles a tree in the middle of the room." << endl;
             Sleep(1000);
             cout << "You are in 'Room Ten', the ground starts rumbling..." << endl;
-            Sleep(1000);
+            Sleep(2000);
             boss();
             cout << "A boss spawned, fight for your life!" << endl;
             Sleep(1000);
