@@ -226,7 +226,7 @@ __        __   _
             Sleep(1000);
             if (roomData[3] != "true")
             {
-                cout << "A (p)et approaches you, would you like to pet it?" << endl;
+                cout << "A (p)et approaches you, would you like to pet it? [Pet it now!]" << endl;
                 roomData[3] = "true";
             }
             cin >> direction;
