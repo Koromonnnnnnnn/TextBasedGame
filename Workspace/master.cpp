@@ -222,8 +222,11 @@ __        __   _
         case 4:
             petRand = petActions();
             currentPet = petGenerator();
-            cout << "Your footsteps echo as you walk through the cave. Torches line the stone walls and mysterious crystals liter the floors." << endl;
-            Sleep(1000);
+            if (roomData[3] != "true")
+            {
+                cout << "Your footsteps echo as you walk through the cave. Torches line the stone walls and mysterious crystals liter the floors." << endl;
+                Sleep(1000);
+            }
             cout << "You are in 'Room Four' (Cave), you can go (E)ast to 'Room Five', or (N)orth back to 'Room Three'" << endl;
             Sleep(1000);
             if (roomData[3] != "true")
