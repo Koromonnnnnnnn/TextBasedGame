@@ -135,7 +135,10 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 2:
-            cout << "Face to face with 2 giant slate doors; a small keyhole in the middle." << endl;
+            if (roomData[1] != "true")
+            {
+                cout << "Face to face with 2 giant slate doors; a small keyhole in the middle." << endl;
+            }
             cout << "You are in 'Room Two', do you wish to go (S)outh towards 'Room Three'? Or (W)est back to 'Room One'" << endl;
             cin >> direction;
             if (direction == 'W' || direction == 'w')
