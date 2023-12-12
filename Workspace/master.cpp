@@ -248,7 +248,7 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 5:
-            cout << "" << endl;
+            cout << "As you exit the cave, you walk into a vast room with big orange trees and bright red bushes everywhere." << endl;
             Sleep(1000);
             cout << "You are in 'Room Five', you can go (N)orth to 'Room Six', or (W)est back to 'Room Four'" << endl;
             Sleep(1000);
@@ -304,7 +304,7 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 7:
-            cout << "" << endl;
+            cout << "You make your way into a smaller, less intimidating room. A tree is in the corner." << endl;
             Sleep(1000);
             cout << "You are in 'Room Seven', you can go (E)ast to 'Room Eight', or (W)est back to 'Room Six'" << endl;
             Sleep(1000);
