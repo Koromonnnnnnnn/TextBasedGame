@@ -250,11 +250,10 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 5:
-            if (roomData[4] != "false")
+            if (roomData[4] != "true")
             {
                 cout << "As you exit the cave, you walk into a vast room with big orange trees and bright red bushes everywhere." << endl;
                 Sleep(1000);
-                roomData[4] != "false";
             }
             cout << "You are in 'Room Five', you can go (N)orth to 'Room Six', or (W)est back to 'Room Four'" << endl;
             Sleep(1000);
@@ -265,6 +264,7 @@ __        __   _
                 burger();
                 Sleep(1000);
                 cout << "Thoughts: I'm starving, maybe I should eat this mysterious (B)urger." << endl;
+                roomData[4] = "true";
             }
             cin >> direction;
             if (direction == 'W' || direction == 'w')
@@ -362,11 +362,14 @@ __        __   _
             cout << "───────────────────────────────────────────────────────────────────────" << endl;
             break;
         case 9:
-            roomData[8] = "true";
-            cout << "This room has nothing special in it. No monsters, no chests, no creatures." << endl;
-            Sleep(1000);
-            cout << "You start to wonder what the purpose of this place was... Are you dreaming, pehaps?" << endl;
-            Sleep(1000);
+            if (roomData[8] != "true")
+            {
+                cout << "This room has nothing special in it. No monsters, no chests, no creatures." << endl;
+                Sleep(1000);
+                cout << "You start to wonder what the purpose of this place was... Are you dreaming, pehaps?" << endl;
+                Sleep(1000);
+                roomData[8] = "true";
+            }
             cout << "You are in 'Room Nine', you can go North-(E)ast to 'Room 10', or (N)orth back to 'Room Eight'" << endl;
             cin >> direction;
             if (direction == 'E' || direction == 'e')
