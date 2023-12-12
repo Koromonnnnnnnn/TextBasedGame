@@ -168,8 +168,10 @@ __        __   _
                 cout << "A mysterious (C)hest is to your left." << endl;
             if (chestData[0] == "true")
             {
-                cout << "" << endl;
-                Sleep(1000);
+                if (monstersData[0] == "false"){
+                    cout << "This place is awfully dark. You notice a pair of glowing eyes staring in your direction..." << endl;
+                    Sleep(1000);
+                }
                 cout << "You are in 'Room Three', you can go (S)outh to 'Room Four' (Cave), or (N)orth back to 'Room Two'" << endl;
                 Sleep(1000);
             }
